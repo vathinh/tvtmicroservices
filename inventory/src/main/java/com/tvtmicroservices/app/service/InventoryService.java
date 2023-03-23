@@ -1,6 +1,10 @@
 package com.tvtmicroservices.app.service;
 
+import com.tvtmicroservices.app.dto.InventoryResponse;
+
+import java.util.List;
+
 public interface InventoryService {
 
-    public boolean isInStock(String skuCode);
+    public List<InventoryResponse> isInStock(List<String> skuCode);
 }
