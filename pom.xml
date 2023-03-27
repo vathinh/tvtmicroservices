@@ -13,6 +13,7 @@
     <module>order</module>
     <module>inventory</module>
     <module>discovery-server</module>
+    <module>api-gateway</module>
   </modules>
 
   <name>tvt-app</name>

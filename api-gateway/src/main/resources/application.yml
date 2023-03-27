@@ -1,0 +1,42 @@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+
+logging:
+  level-root: "INFO"
+  level:
+    org.springframework.cloud:
+          gateway:
+            route:
+              org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+
+
+
+spring:
+  server:
+    port: 8080
+    application:
+      name: api_gateway
+  cloud:
+    gateway:
+      routes:
+        - id: "product"
+          uri: "lb://product"
+          predicates: "Path=/api/product"
+
+        - id: "order"
+          uri: "lb://order"
+          predicates: "Path=/api/order"
+
+        - id: "discovery-server"
+          uri: "http://localhost:8761"
+          predicates: "Path=/eureka/web"
+          filters: "SetPath=/"
+
+        - id: "discovery-server-static"
+          uri: "http://localhost:8761"
+          predicates: "Path=/eureka/web"
+          filters: "SetPath=/eureka/**"
+
