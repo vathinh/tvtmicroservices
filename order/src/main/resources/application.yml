@@ -1,5 +1,9 @@
 server:
   port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://eureka:password@localhost:8761/eureka"
 spring:
   application:
     name: order
@@ -15,7 +19,3 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
-  eureka:
-    client:
-      service-url:
-        defaultZone: "http://localhost:8761/eureka"
