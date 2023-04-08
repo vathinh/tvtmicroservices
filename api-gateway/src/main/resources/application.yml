@@ -11,13 +11,13 @@ logging:
       org.springframework.cloud:
             - gateway:
                 route:
-                  org.springframework.cloud.gateway.route.RouteDefinitionLocator: INFO
+                  org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
             - gateway: TRACE
 
 
 spring:
   application:
-    name: api_gateway
+    name: api-gateway
   cloud:
     gateway:
       routes:
